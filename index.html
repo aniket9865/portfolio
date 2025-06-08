@@ -5,27 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aniket Portfolio</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/c4254e24a8.js" crossorigin="anonymous"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/2ce6515424.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- <style>
+        /* html {
+            scroll-behavior: smooth; /* Enables smooth scrolling */
+        } */
+    </style> -->
 </head>
 <body>
-    <div id="header">
+<div id="header">
     <div class="container">
-        <nav>
-            <img src="images/logo.png" alt="logo" class="logo">
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Service</a></li>
-                <li><a href="#">Portfolio</a></li>
-                <li><a href="#">Contact</a></li>
+        <nav class="navbar">
+            <img src="images/logo.png" alt="Company Logo" class="logo">
+            <ul id="sidemenu">
+                <li><a href="#header">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Service</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <i class="fas fa-times" onclick="closemenu()"></i>
             </ul>
+            <i class="fas fa-bars" onclick="openmenu()"></i>
         </nav>
+        
         <div class="header-text">
-            <p>Developer, Hacker</p>
+            <p>Fullstack, Web Developer</p>
             <h1>Hi, I'm <span>Aniket</span> <br>Deula from Ktm,tilganga</h1>
         </div>
     </div>
 </div>
+
+<!-- ..........about...................... -->
+ 
 <div id="about">
     <div class="container">
         <div class="row">
@@ -33,108 +46,481 @@
                 <img src="images/aniket.jpg" alt="personal photo">
             </div>
             <div class="about-col-2">
-                <h1 class="sub-title">About Me</h1>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatum quidem obcaecati recusandae soluta nam, aliquid ipsam sequi, autem vitae mollitia alias praesentium voluptas accusantium iusto fugiat est quam corrupti nesciunt!
-                </p>
+                <!-- <h1 class="sub-title">About Me</h1>
+                <p>Hi, I'm a passionate Full Stack Developer with hands-on experience building dynamic and responsive web applications. I specialize in both front-end and back-end development, using technologies like HTML, CSS, Vue.js, Laravel, Tailwind CSS, and Bootstrap. I also use Postman for API testing and development workflows.
+                    <br><br>
+                    With a strong eye for design and detail, I enjoy creating user-friendly interfaces while ensuring clean and maintainable code on the backend. I'm always excited to learn new tools, tackle challenges, and build meaningful digital experiences.
+                </p> -->
+
+                <div class="">
+                    <h1 class="sub-title text-3xl font-bold text-white mb-4">About Me</h1>
+                    <p class="text-base text-gray-300 leading-relaxed">
+                      Hi, I'm a <span class="font-semibold text-white">Full Stack Developer</span> with hands-on experience building dynamic and responsive web applications.
+                      I specialize in both front-end and back-end development, working with technologies like 
+                      <span class="font-medium text-blue-400">HTML</span>, 
+                      <span class="font-medium text-blue-400">CSS</span>, 
+                      <span class="font-medium text-blue-400">Vue.js</span>, 
+                      <span class="font-medium text-blue-400">Laravel</span>, 
+                      <span class="font-medium text-blue-400">Tailwind CSS</span>, and 
+                      <span class="font-medium text-blue-400">Bootstrap</span>.
+                      I also use <span class="font-medium text-blue-400">Postman</span> for API testing and workflow optimization.
+                      <!-- <br><br>
+                      With a strong eye for design and detail, I enjoy creating user-friendly interfaces while ensuring clean, maintainable backend code.
+                      I'm always excited to explore new technologies, solve real-world problems, and build meaningful digital experiences. -->
+                    </p>
+                  </div>
+
                 <div class="tab-titles">
-                    <p class="tab-links active-link" onclick="opentab('Skills')">Skills</p>
-                    <p class="tab-links" onclick="opentab('Experience')">Experience</p>
-                    <p class="tab-links" onclick="opentab('Education')">Education</p>
+                    <p data-target="Skills" class="tab-links active-link">Skills</p>
+                    <p data-target="Experience" class="tab-links">Experience</p>
+                    <p data-target="Education" class="tab-links">Education</p>
                 </div>
-                <div class="tab-contents active-tab" id="Skills">
-                    <ul>
-                        <li><span>Web Devlopment</span><br>Web Development</li>
-                        <li><span>Laravel Deveoper</span><br>Web Development</li>
-                        <li><span>Html,Css Devloper</span><br>Web Development</li>
-                    </ul>
-                </div>
-                <div class="tab-contents" id="Experience">
-                    <ul>
-                        <li><span>html,css</span><br>Web Development</li>
-                        <li><span>javascirpt,vuejs</span><br>Web Development</li>
-                        <li><span>laravel</span><br>Web Development</li>
-                    </ul>
-                </div>
-                <div class="tab-contents" id="Education">
-                    <ul>
-                        <li><span>SLC</span><br>Bridgewate Internetinal School</li>
-                        <li><span>+2</span><br>Univeresal College</li>
-                        <li><span>Bachelor</span><br>Goldengate Collge</li>
-                    </ul>
+                <div class="tab-slider">
+                    <div class="tab-contents active-tab" id="Skills">
+                        <ul>
+                            <li><span class="highlight-red">Web Development</span><br>Front-end & Back-end Development</li>
+                            <li><span class="highlight-red">Laravel Developer</span><br>Building powerful PHP-based applications</li>
+                            <li><span class="highlight-red">HTML & CSS</span><br>Creating responsive and modern interfaces</li>
+                            <li><span class="highlight-red">Vue.js</span><br>Reactive and dynamic front-end experiences</li>
+                            <li><span class="highlight-red">Bootstrap & Tailwind</span><br>Design systems and layout utilities</li>
+                            <li><span class="highlight-red">Postman</span><br>API Testing & Integration</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="Experience">
+                        <ul>
+                            <li><span class="highlight-red">HTML, CSS</span><br>Built responsive websites and landing pages</li>
+                            <li><span class="highlight-red">JavaScript, Vue.js</span><br>Created interactive UI components</li>
+                            <li><span class="highlight-red">Laravel</span><br>Developed RESTful APIs and web applications</li>
+                            <li><span class="highlight-red">Version Control</span><br>Used Git for code collaboration</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="Education">
+                        <ul>
+                            <li><span class="highlight-red">SLC</span><br>Bridgewater Internetinal School</li>
+                            <li><span class="highlight-red">+2</span><br>Univeresal College</li>
+                            <li><span class="highlight-red">Bachelor</span><br>Goldengate Collge</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-<!-- .................services....................
- <div id="services">
-    <div class="container">
-        <h1 class="sub-title">My services</h1>
-            <div class="services-list">
-                <div>
-                    <h2>Web Development</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum ex architecto soluta natus. Nobis esse aliquam eaque, officia ipsa aut voluptatem labore, quo, facere numquam harum eos velit deleniti dicta!
-                    </p>
-                    <a href="#">Learn more</a>
-                </div>
-                <div>
-                    <h2>Hacker Aniket</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum ex architecto soluta natus. Nobis esse aliquam eaque, officia ipsa aut voluptatem labore, quo, facere numquam harum eos velit deleniti dicta!
-                    </p>
-                    <a href="#">Learn more</a>
-                </div>
-                <div>
-                    <h2>Undertaker</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum ex architecto soluta natus. Nobis esse aliquam eaque, officia ipsa aut voluptatem labore, quo, facere numquam harum eos velit deleniti dicta!
-                    </p>
-                    <a href="#">Learn more</a>
-                </div>
-            </div>
-        
-    </div>
- </div> -->
-
  <!-- .................services.................... -->
 <section id="services">
-    <div class="container">
+    <!-- <div class="container">
         <h1 class="sub-title">My Services</h1>
         <div class="services-list">
             <div class="service-item">
+                <i class="fas fa-code service-icon"></i>
                 <h2>Web Development</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum ex architecto soluta natus. Nobis esse aliquam eaque, officia ipsa aut voluptatem labore, quo, facere numquam harum eos velit deleniti dicta!</p>
                 <a href="#" aria-label="Learn more about Web Development">Learn more</a>
             </div>
             <div class="service-item">
+                <i class="fas fa-crop-alt"></i>
                 <h2>Hacker Aniket</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum ex architecto soluta natus. Nobis esse aliquam eaque, officia ipsa aut voluptatem labore, quo, facere numquam harum eos velit deleniti dicta!</p>
                 <a href="#" aria-label="Learn more about Hacking services">Learn more</a>
             </div>
             <div class="service-item">
+                <i class="fas fa-code service-icon"></i>
                 <h2>Undertaker</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum ex architecto soluta natus. Nobis esse aliquam eaque, officia ipsa aut voluptatem labore, quo, facere numquam harum eos velit deleniti dicta!</p>
                 <a href="#" aria-label="Learn more about Undertaker services">Learn more</a>
             </div>
         </div>
     </div>
+     -->
+<!-- 
+     <div class="container">
+        <h1 class="sub-title">My Services</h1>
+        <div class="services-list">
+            <div class="service-item">
+                <i class="fas fa-code service-icon"></i>
+                <h2>Full Stack Web Development</h2>
+                <p>I create fully functional and responsive websites and applications, managing both frontend and backend. From layout to logic, I ensure performance, usability, and clean code architecture using technologies like Laravel, Vue.js, HTML, and CSS.</p>
+                <a href="#" aria-label="Learn more about Full Stack Web Development">Learn more</a>
+            </div>
+            <div class="service-item">
+                <i class="fas fa-layer-group"></i>
+                <h2>Frontend Design & Frameworks</h2>
+                <p>I specialize in building engaging user interfaces using Tailwind CSS and Bootstrap. My designs are mobile-friendly, modern, and accessible, focused on enhancing user experience through smooth interaction and layout precision.</p>
+                <a href="#" aria-label="Learn more about Frontend Design">Learn more</a>
+            </div>
+            <div class="service-item">
+                <i class="fas fa-network-wired"></i>
+                <h2>API Development & Integration</h2>
+                <p>I develop and integrate RESTful APIs to connect systems efficiently. With Laravel on the backend and Postman for testing, I ensure robust and secure communication between the client and server sides of applications.</p>
+                <a href="#" aria-label="Learn more about API Development and Integration">Learn more</a>
+            </div>
+        </div>
+    </div> -->
+
+    <div class="container">
+        <h1 class="sub-title">My Services</h1>
+        <div class="services-list">
+            <div class="service-item">
+                <i class="fas fa-code service-icon"></i>
+                <h2>Full Stack Web Development</h2>
+                <p>I create fully functional and responsive websites and applications, managing both frontend and backend. From layout to logic, I ensure performance, usability, and clean code architecture using technologies like Laravel, Vue.js, HTML, and CSS.</p>
+                <a href="#" aria-label="Learn more about Full Stack Web Development">Learn more</a>
+            </div>
+            <div class="service-item">
+                <i class="fas fa-layer-group"></i>
+                <h2>Frontend Design & Frameworks</h2>
+                <p>I specialize in building engaging user interfaces using Tailwind CSS and Bootstrap. My designs are mobile-friendly, modern, and accessible, focused on enhancing user experience through smooth interaction and layout precision.</p>
+                <a href="#" aria-label="Learn more about Frontend Design">Learn more</a>
+            </div>
+            <div class="service-item">
+                <i class="fas fa-network-wired"></i>
+                <h2>API Development & Integration</h2>
+                <p>I develop and integrate RESTful APIs to connect systems efficiently. With Laravel on the backend and Postman for testing, I ensure robust and secure communication between the client and server sides of applications.</p>
+                <a href="#" aria-label="Learn more about API Development and Integration">Learn more</a>
+            </div>
+            <!-- Additional Services -->
+            <div class="service-item">
+                <i class="fas fa-database"></i>
+                <h2>Database Management & Optimization</h2>
+                <p>From database design to migrations and optimizations, I ensure your data is organized, secure, and scalable for future growth. I work with MySQL, MariaDB, and other databases to streamline your app's performance.</p>
+                <a href="#" aria-label="Learn more about Database Management">Learn more</a>
+            </div>
+            <div class="service-item">
+                <i class="fas fa-life-ring"></i>
+                <h2>Web Application Maintenance & Support</h2>
+                <p>I offer ongoing support and maintenance services to keep your web applications up-to-date, bug-free, and running smoothly. Whether it's small fixes or major updates, I've got you covered.</p>
+                <a href="#" aria-label="Learn more about Web App Maintenance">Learn more</a>
+            </div>
+            <div class="service-item">
+                <i class="fas fa-shopping-cart"></i>
+                <h2>E-commerce Solutions</h2>
+                <p>Transform your business with powerful e-commerce solutions. I design and develop fully functional online stores with secure payment gateways, product management, and user-friendly checkout systems.</p>
+                <a href="#" aria-label="Learn more about E-commerce Solutions">Learn more</a>
+            </div>
+        </div>
+    </div>
+    
+    
+    <!-- ..............portfolio............... -->
+<div id="portfolio">
+    <div class="container">
+        <h1 class="sub-title">My Work</h1>
+        <div class="work-list">
+
+            <!-- Project Block -->
+<div class="work" onclick="openGallery(['ecommerce/1.png', 'ecommerce/2.png', 'ecommerce/3.png', 'ecommerce/4.png', 'ecommerce/5.png', 'ecommerce/6.png', 'ecommerce/7.png', 'ecommerce/8.png', 'ecommerce/9.png', 'ecommerce/10.png', 'ecommerce/11.png', 'ecommerce/12.png', 'ecommerce/13.png', 'ecommerce/14.png', 'ecommerce/15.png', 'ecommerce/16.png'])">
+    <h3 class="text-center">E-Commerce Platform</h3>
+    <img src="images/image.png" alt="E-Commerce Platform">
+    <div class="layer">
+        <h3>E-Commerce Platform</h3>
+        <p>A fully functional e-commerce website built using Laravel...</p>
+        <a href="javascript:void(0);"><i class="fa-solid fa-up-right-from-square"></i></a>
+    </div> 
+</div>
+
+<!-- Modal for Gallery -->
+<div id="galleryModal" class="modal">
+    <span class="close" onclick="closeGallery()">&times;</span>
+    <div class="modal-content" id="galleryImages"></div>
+</div>
+            <!-- Project Block -->
+            <div class="work" onclick="openGallery(['blog/1.png', 'blog/2.png', 'blog/3.png', 'blog/4.png', 'blog/5.png', 'blog/6.png', 'blog/7.png', 'blog/8.png', 'blog/9.png', 'blog/10.png', 'blog/11.png', 'blog/12.png', 'blog/13.png', 'blog/14.png'])">
+                <h3 class="text-center">Blogs Platform</h3>
+                <img src="images/image copy 3.png" alt="Blogs Platform">
+                <div class="layer">
+                    <h3>Blogs Platform</h3>
+                    <p>A dynamic blog platform built with Vue.js on the frontend and Laravel on the backend. Real-time updates, user interaction, and a content management system for seamless blogging.</p>
+                    <a href="javascript:void(0);"><i class="fa-solid fa-up-right-from-square"></i></a>
+                </div> 
+            </div>
+            <div class="work" onclick="openGallery(['chat/1.png', 'chat/2.png', 'chat/3.png', 'chat/4.png', 'chat/5.png', 'chat/6.png'])">
+                <h3 class="text-center">Chat App (MERN Stack)</h3>
+                <img src="chat/1.png" alt="Chat App">
+                <div class="layer">
+                    <h3>Chat App (MERN Stack)</h3>
+                    <p>Real-time chat application using React, Node.js, Express, and MongoDB. Includes user authentication, socket communication, and responsive UI.</p>
+                    <a href="javascript:void(0);"><i class="fa-solid fa-up-right-from-square"></i></a>
+                </div> 
+            </div>
+            
+            <div class="work" onclick="openGallery(['netflix/1.png', 'netflix/2.png', 'netflix/3.png', 'netflix/4.png', 'netflix/5.png', 'netflix/6.png', 'netflix/7.png', 'netflix/8.png', 'netflix/9.png', 'netflix/10.png', 'netflix/11.png', 'netflix/12.png'])">
+                <h3 class="text-center">Netflix Clone (MERN Stack)</h3>
+                <img src="netflix/1.png" alt="Netflix Clone">
+                <div class="layer">
+                    <h3>Netflix Clone (MERN Stack)</h3>
+                    <p>Developed a streaming clone UI using React and Node.js with TMDB API integration. Responsive design with dynamic routing, user login, and media previews.</p>
+                    <a href="javascript:void(0);"><i class="fa-solid fa-up-right-from-square"></i></a>
+                </div> 
+            </div>
+            
+            <div class="work" onclick="openGallery(['job/1.png', 'job/2.png', 'job/3.png', 'job/4.png', 'job/5.png', 'job/6.png'])">
+                <h3 class="text-center">Job Application Platform</h3>
+                <img src="images/image copy 4.png" alt="Job Application Platform">
+                <div class="layer">
+                    <h3>Job Application Platform</h3>
+                    <p>A job application platform built with Vue.js, where users can submit applications, and data is stored in JSON format for easy management.</p>
+                    <a href="javascript:void(0);"><i class="fa-solid fa-up-right-from-square"></i></a>
+                </div>
+
+            </div>
+            <div class="work" onclick="openGallery(['wiki/1.png', 'wiki/2.png', 'wiki/3.png'])">
+                <h3 class="text-center">Wikipedia Search Platform</h3>
+                <img src="images/image copy 5.png" alt="Wikipedia Search Platform">
+                <div class="layer">
+                    <h3>Wikipedia Search Platform</h3>
+                    <p>A platform built with Vue.js that allows users to search Wikipedia and view article summaries in real-time.</p>
+                    <a href="javascript:void(0);"><i class="fa-solid fa-up-right-from-square"></i></a>
+                </div>
+            </div>
+
+            <div class="work" onclick="openGallery(['parking/1.png', 'parking/2.png', 'parking/3.png', 'parking/4.png', 'parking/5.png', 'parking/6.png', 'parking/7.png', 'parking/8.png', 'parking/9.png', 'parking/10.png', 'parking/11.png'])">
+                <h3 class="text-center">Parking Management System</h3>
+                <img src="images/image copy 6.png" alt="Parking Management System">
+                <div class="layer">
+                    <h3>Parking Management System</h3>
+                    <p>A parking management system built with PHP that allows users to check available spaces, reserve spots, and manage parking data efficiently.</p>
+                    <a href="javascript:void(0);"><i class="fa-solid fa-up-right-from-square"></i></a>
+                </div>
+
+            </div>
+            <div class="work" onclick="openGallery(['simple/1.png', 'simple/2.png', 'simple/3.png'])">
+                <h3 class="text-center">Simple Website</h3>
+                <img src="images/image copy 7.png" alt="Simple Website">
+                <div class="layer">
+                    <h3>Simple Website</h3>
+                    <p class="text-sm">A basic website with three sections: Home, Gallery, and Contact. The Home section contains an introduction, the Gallery displays images, and the Contact section includes a form for user inquiries.</p>
+                    <a href="javascript:void(0);"><i class="fa-solid fa-up-right-from-square"></i></a>
+                </div>
+            </div>
+
+
+
+            <!-- <div class="work">
+                <h3 class="text-center">E-Commerce Platform</h3>
+                <img src="images/image.png" alt="E-Commerce Platform">
+                <div class="layer">
+                    <h3>E-Commerce Platform</h3>
+                    <p>A fully functional e-commerce website built using Laravel, offering a seamless shopping experience with features like user authentication, a product catalog, shopping cart, and secure payment integration.</p>
+                    <a href="images/image.png"><i class="fa-solid fa-up-right-from-square"></i></a>
+                </div> 
+            </div>
+            <div class="work">
+                <h3 class="text-center">Blogs Platform</h3>
+                <img src="images/image copy 3.png" alt="Blogs Platform">
+                <div class="layer">
+                    <h3>Blogs Platform</h3>
+                    <p>A dynamic blog platform built with Vue.js on the frontend and Laravel on the backend. Real-time updates, user interaction, and a content management system for seamless blogging.</p>
+                    <a href="images/image copy 3.png"><i class="fa-solid fa-up-right-from-square"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <h3 class="text-center">Job Application Platform</h3>
+                <img src="images/image copy 4.png" alt="Job Application Platform">
+                <div class="layer">
+                    <h3>Job Application Platform</h3>
+                    <p>A job application platform built with Vue.js, where users can submit applications, and data is stored in JSON format for easy management.</p>
+                    <a href="images/image copy 4.png"><i class="fa-solid fa-up-right-from-square"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <h3 class="text-center">Wikipedia Search Platform</h3>
+                <img src="images/image copy 5.png" alt="Wikipedia Search Platform">
+                <div class="layer">
+                    <h3>Wikipedia Search Platform</h3>
+                    <p>A platform built with Vue.js that allows users to search Wikipedia and view article summaries in real-time.</p>
+                    <a href="images/image copy 5.png"><i class="fa-solid fa-up-right-from-square"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <h3 class="text-center">Parking Management System</h3>
+                <img src="images/image copy 6.png" alt="Parking Management System">
+                <div class="layer">
+                    <h3>Parking Management System</h3>
+                    <p>A parking management system built with PHP that allows users to check available spaces, reserve spots, and manage parking data efficiently.</p>                    
+                    <a href="images/image copy 6.png"><i class="fa-solid fa-up-right-from-square"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <h3 class="text-center">Simple Website</h3>
+                <img src="images/image copy 7.png" alt="Simple Website">
+                <div class="layer">
+                    <h3>Simple Website</h3>
+                    <p class="text-sm">A basic website with three sections: Home, Gallery, and Contact. The Home section contains an introduction, the Gallery displays images, and the Contact section includes a form for user inquiries.</p>
+                    <a href="images/image copy 7.png"><i class="fa-solid fa-up-right-from-square"></i></a>
+                </div>
+            </div> -->
+        </div>
+        <a href="#" class="btn">See More</a>
+    </div>
+</div>
+
+<!-- .............contact................... -->
+
+<div id="contact">
+    <div class="conainer">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact me</h1>
+                <p>deulaaniket4@gmail.com</p>
+                <p>9865727221</p>
+               
+                <div class="social-icons">
+                    <a href="https://facebook.com/" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-twitter-square"></i>
+                    </a>
+                    <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+                
+                <a href="" class="btn btn2">Download CV</a>
+            </div>
+            <div class="contact-right">
+                <form action="">
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="text" name="email" placeholder="Your Email" required>
+                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn btn2">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>Copyright @ Aniket. Made with <i class="fas fa-heart"></i> By Aniket Deula </p>
+    </div>
+</div>
+
+    <!-- <script>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+    
+        function opentab(tabname) {
+            for (let tablink of tablinks) {
+                tablink.classList.remove("active-link");
+            }
+            for (let tabcontent of tabcontents) {
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+    </script> -->
+    <!-- <script>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+    
+        function opentab(event, tabname) {
+            for (let tablink of tablinks) {
+                tablink.classList.remove("active-link");
+            }
+            for (let tabcontent of tabcontents) {
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+    
+        // Attach event listeners
+        document.getElementById("tab-skills").addEventListener("click", function (event) {
+            opentab(event, "Skills");
+        });
+        document.getElementById("tab-experience").addEventListener("click", function (event) {
+            opentab(event, "Experience");
+        });
+        document.getElementById("tab-education").addEventListener("click", function (event) {
+            opentab(event, "Education");
+        });
+    </script> -->
+    <script>
+        var tablinks = document.querySelectorAll(".tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+        var currentTab = 0; // Keeps track of the current active tab
+    
+        function opentab(event, tabname) {
+            for (let tablink of tablinks) {
+                tablink.classList.remove("active-link");
+            }
+            for (let tabcontent of tabcontents) {
+                tabcontent.classList.remove("active-tab", "prev-tab");
+            }
+    
+            // Find index of the clicked tab
+            let clickedIndex = Array.from(tablinks).indexOf(event.currentTarget);
+    
+            // Add sliding direction
+            if (clickedIndex > currentTab) {
+                tabcontents[currentTab].classList.add("prev-tab"); // Slide out left
+            }
+    
+            currentTab = clickedIndex; // Update current tab index
+    
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+
+        tablinks.forEach(tablink => {
+            tablink.addEventListener('click', function (event) {
+                const elementId = event.target.dataset.target;
+                opentab(event, elementId);
+            });
+        });
+    
+        // Attach event listeners
+        // document.getElementById("tab-skills").addEventListener("click", function (event) {
+        //     opentab(event, "Skills");
+        // });
+        // document.getElementById("tab-experience").addEventListener("click", function (event) {
+        //     opentab(event, "Experience");
+        // });
+        // document.getElementById("tab-education").addEventListener("click", function (event) {
+        //     opentab(event, "Education");
+        // });
+    </script>
+<script>
+    var sidemeu = document.getElementById("sidemenu");
+
+    function openmenu(){
+        sidemeu.style.right = "0";
+    }
+    function closemenu(){
+        sidemeu.style.right = "-200px";
+    }
+
+</script>
+
+<script>
+    function openGallery(images) {
+        const modal = document.getElementById('galleryModal');
+        const container = document.getElementById('galleryImages');
+        container.innerHTML = ''; // Clear old images
+    
+        images.forEach(src => {
+            const img = document.createElement('img');
+            img.src = src;
+            container.appendChild(img);
+        });
+    
+        modal.style.display = 'block';
+    }
+    
+    function closeGallery() {
+        document.getElementById('galleryModal').style.display = 'none';
+    }
+    </script>
+    
+
 </section>
 
 
-<script>
-    var tablinks = document.getElementsByClassName("tab-links");
-    var tabcontents = document.getElementsByClassName("tab-contents");
 
-    function opentab(tabname) {
-        for (let tablink of tablinks) {
-            tablink.classList.remove("active-link");
-        }
-        for (let tabcontent of tabcontents) {
-            tabcontent.classList.remove("active-tab");
-        }
-        event.currentTarget.classList.add("active-link");
-        document.getElementById(tabname).classList.add("active-tab");
-    }
-</script>
 
 </body>
 </html>
+
